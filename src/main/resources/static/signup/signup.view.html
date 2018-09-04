@@ -1,0 +1,93 @@
+﻿
+<div class="container">
+
+    <div class="credits text-center"  style="margin-bottom:80px">
+        <div style="float:left;color:blue;font-size:20px">
+            Sign Up Form: Upload KYC Details
+        </div>
+    </div>
+    <div class="row" ng-controller="SignUpController" style="margin-bottom:20px">
+        <div class="col-md-3" style="text-align:left;left-margin:0">
+            Select Aadhar Card
+        </div>
+        <div class="col-md-6">
+             <input type="file" aadhar="file" filepreview1="filepreview1"/>
+        </div>
+        <div class="col-md-1">
+            <img ng-src="{{filepreview1}}" class="img-responsive" ng-show="filepreview1"/>
+        </div>
+
+    </div>
+    <div class="row" ng-controller="SignUpController" style="margin-bottom:20px">
+        <div class="col-md-3" style="text-align:left;left-margin:0">
+            Select Salary Slip
+        </div>
+        <div class="col-md-6">
+            <input type="file" pancard="file" filepreview2="filepreview2"/>
+        </div>
+        <div class="col-md-1">
+            <img ng-src="{{filepreview2}}" class="img-responsive" ng-show="filepreview2"/>
+        </div>
+
+    </div>
+
+    <div class="row" ng-controller="SignUpController" style="margin-bottom:20px">
+        <div class="col-md-3" margin-left style="text-align:left;left-margin:0">
+            Select ITR
+        </div>
+        <div class="col-md-6">
+            <input type="file" pancard="file" filepreview2="filepreview2"/>
+        </div>
+        <div class="col-md-1">
+            <img ng-src="{{filepreview2}}" class="img-responsive" ng-show="filepreview2"/>
+        </div>
+    </div>
+    <div class="row" ng-controller="SignUpController" style="margin-bottom:20px">
+        <div class="col-md-3" style="text-align:left;left-margin:0">
+                Select Bank Statement
+        </div>
+        <div class="col-md-6">
+            <input type="file" pancard="file" filepreview2="filepreview2"/>
+        </div>
+        <div class="col-md-1">
+            <img ng-src="{{filepreview2}}" class="img-responsive" ng-show="filepreview2"/>
+        </div>
+
+    </div>
+    <div class="row" ng-controller="SignUpController" style="margin-bottom:20px">
+        <div class="col-md-3" style="text-align:left;left-margin:0">
+            Highest Qualification:
+        </div>
+        <div class="col-md-3" style="text-align:left;left-margin:0">
+            <select ng-model="register.qualification" ng-options="qualification.id as qualification.name for qualification in register.qualifications">
+            </select>
+        </div>
+
+    </div>
+    <div class="row" ng-controller="SignUpController" style="margin-bottom:20px">
+        <div class="col-md-3" style="text-color:blue">
+            Occupation:
+        </div>
+        <div class="col-md-3" style="text-color:blue">
+            <select ng-model="register.occupation" ng-options="occupation.id as occupation.name for occupation in register.occupations">
+            </select>
+        </div>
+
+    </div>
+    <div class="row" ng-controller="SignUpController" style="margin-bottom:40px">
+        <div class="col-md-3" style="text-color:blue">
+            Salary Range:
+        </div>
+        <div class="col-md-3" style="text-align:left;left-margin:0">
+            <select ng-model="register.salrange" ng-options="salrange.id as salrange.name for salrange in register.salranges">
+            </select>
+       </div>
+
+    </div>
+
+    <div class="form-actions">
+        <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-primary">Register</button>
+        <img ng-if="vm.dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+        <button ng-click="redirect('#!/login')" class="btn btn-primary">Cancel</button>
+    </div>
+</div>

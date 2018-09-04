@@ -1,0 +1,58 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+ .panel-heading {
+    background-image: none;
+    background-color: red;
+    color: white;
+
+}
+</style>
+</head>
+
+
+<!-- <headback>Borrower Request&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</headback><br/><br/> -->
+<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/angularjs-slider/1.0.0/rzslider.min.css"/> -->
+<link rel="stylesheet" type="text/css" href="slider.css"/>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script> -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angularjs-slider/1.0.0/rzslider.min.js"></script>
+<script type="text/javascript" src ="lending.controller.js"></script>
+
+  <div class="panel panel-info">
+    <div class="panel-heading"><h2  style="color:black;">Lender Request</h2></div>
+  </div>
+
+<div ng-app="hackathonApp">
+<div ng-controller="lenderCtrl as vmLender">
+<form ng-submit="submitLenderRequest()">
+<b>Capacity :</b><input ng-model="lenderInfo.capacity" type="text">
+<br>
+<br>
+<b>Tenor :</b>
+<input type="radio" ng-model="lenderInfo.howLong" value="onem">One Month&nbsp &nbsp  &nbsp
+<input type="radio" ng-model="lenderInfo.howLong" value="threem">Three Month&nbsp &nbsp  &nbsp
+<input type="radio" ng-model="lenderInfo.howLong" value="sixm">Six Month&nbsp &nbsp  &nbsp
+<input type="radio" ng-model="lenderInfo.howLong" value="twelwem">One Year&nbsp &nbsp  &nbsp
+<input type="radio" ng-model="lenderInfo.howLong" value="moreThanOne">More Than That&nbsp &nbsp  &nbsp
+<br>
+<br>
+
+<b>ROI (%)</b>  <rzslider rz-slider-model="vmLender.interestSlider.minValue" rz-slider-high="vmLender.interestSlider.maxValue" rz-slider-options="vmLender.interestSlider.options"></rzslider><br/>
+
+
+<input type="submit"  class="btn btn-success" value="Request" />
+
+</form>
+</div>
+
+</div>
+
+
+</html>
